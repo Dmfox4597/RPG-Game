@@ -2,6 +2,8 @@
 // Cpsc 1060
 //Lab 005 
 // RPG GAME 
+//It was a little bit for me to start, so I did what any person would do and look for starting places online, so I went to github and looked up Zorg game.
+// This then led me to Someone in our classes code and it has inspired me, I have used parts of code I found online, but I Have made a completly different game out of what parts I did use. 
 
 
 
