@@ -1,3 +1,4 @@
+
 import java.util.ArrayList;
 
 public class Room
@@ -5,14 +6,12 @@ public class Room
     String name;
     String description;
     ArrayList<String> exits;
-    boolean hasItem;
-    Item roomItem;
+   
     
    
     public Room(String name, String description) {
         this.name = name;
         this.description = description;
-        hasItem = false;
         exits = new ArrayList<String>();
     }
 // Creates a name for the rooms
@@ -33,32 +32,6 @@ public class Room
     //gets the room description
     public String roomGetDesc() {
         return this.description;
-    }
-
-    //Checks if room has my item
-    public void roomHasItem() {
-        hasItem = true;
-    }
-
-    //Gives item if room has it 
-    public Boolean getIfItem() {
-        return hasItem;
-    }
-
-    
-    public void presentItem(Item currentItem) {
-        roomItem = currentItem;
-        roomHasItem();
-    }
-
-
-    public Item getRoomItem() {
-        return roomItem;
-    }
-
-    //Stops room from having item
-    public void removeRoomItem() {
-        hasItem = false;
     }
 
     //creates a room to ecit 
