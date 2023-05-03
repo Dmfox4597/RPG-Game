@@ -3,10 +3,8 @@
 //Lab 005 
 // RPG GAME 
 //It was a little bit for me to start, so I did what any person would do and look for starting places online, so I went to github and looked up Zorg game.
-// This then led me to Someone in our classes code and it has inspired me, I have used parts of code I found online, but I Have made a completly different game out of what parts I did use. 
-
-
-
+//Kagan phillips in our class did a similar thing for his puzzle room that I saw on github, I just used a puzzle design very similar and just amplified it by 10 because the was riddles work fasinate me. 
+//I did use his design though to print out the system to a file at the end since I am not very good at it, I did make it print out my own way, but his is very similar 
 
 
 import java.util.HashMap;
@@ -58,18 +56,18 @@ public class Main{
     
     public static String getExits(String userInput, Scanner scnr, HouseMap map, String[] rooms) {
         //Forcing users to acutally pick the correct exit.
-        Boolean realRoom = false;
-        while (!realRoom) {
-            System.out.println("Please choose an exit");
+        Boolean CorrectExit = false;
+        while (CorrectExit==false) {
+            System.out.println("Please advance to the next floor");
             scnr.nextLine();
             userInput = scnr.nextLine();
             for (int i = 0; i < 7; i++) {
                 if (userInput.equalsIgnoreCase(rooms[i]) || userInput.equalsIgnoreCase("exit")) {
-                    realRoom = true;
+                    CorrectExit = true;
                 }
             }
-            if (!realRoom) {
-                System.out.println("Invalid exit.");
+            if (CorrectExit==false) {
+                System.out.println("Why are you never going the way I told you");
             }
         }
 
@@ -77,18 +75,20 @@ public class Main{
     }
     public static Item LevelOne(Scanner scnr, Inventory playerInventory) {
         //I Am making riddles for each level as we advance through the entire house. 
+        // Lastly this puzzle really fasinated me with Kagan doing it on github becasue I have alwasys loved puzzles 
+        // He did a design similar to this, but I took it too the next level
         String Guess="";
         String riddleAnswer = "Newspaper";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item lockpick = new Item("A lockpick", "You looked under the rug and found yourself a lockpick it may be used later");
         System.out.println("Whats black and white and read all over");
         System.out.println();
         System.out.println("Please type what you think it is");
         Guess = scnr.next();
         // Forces you riddle to be correct
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("Now onto level two");
@@ -105,7 +105,7 @@ public class Main{
         // Level two riddles 
         String Guess="";
         String riddleAnswer = "Michael";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item cookie = new Item("A cookie", "You can have yourself a cookie to eat later if your hungry");
         System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -115,9 +115,9 @@ public class Main{
         System.out.println("Please answer below.");
         Guess = scnr.next();
         //Level Two riddle correct 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("You found an old cookie you may use this cookie for later task or even eat if your hungry.");
@@ -133,7 +133,7 @@ public class Main{
         // LEvel Three Riddles 
         String Guess="";
         String riddleAnswer = "M";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item football = new Item("A football", "You know have a source of entertainment I guess");
          System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -142,9 +142,9 @@ public class Main{
         System.out.println();
         Guess = scnr.next();
         //Level Three riddles correct 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("What is this A Football, Now you can be here forever and entertain me");
@@ -160,7 +160,7 @@ public class Main{
         //Level Four Riddles 
         String Guess="";
         String riddleAnswer = "Bottle";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item AnkleMonitor = new Item("A AnkleMonitor", "WHAT?? You have been trapped and an ankle monitor has been put on your leg ");
          System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -169,9 +169,9 @@ public class Main{
         System.out.println();
         Guess = scnr.next();
         //Level Four Riddles correct 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("WHAT?? You have been trapped and an ankle monitor has been put on your leg ");
@@ -187,7 +187,7 @@ public class Main{
         //Level Five riddles 
         String Guess="";
         String riddleAnswer = "Yourself";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item Hammer = new Item("A Hammer", "You found a hammer it may be used to break an item later.");
          System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -196,9 +196,9 @@ public class Main{
         System.out.println();
         Guess = scnr.next();
         //Level five riddles correct 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("Maybe we will use this later to get out");
@@ -215,7 +215,7 @@ public class Main{
         //Level six Riddles 
         String Guess="";
         String riddleAnswer = "Hen";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item Book = new Item("A Physics Book", "lets turn on the flash light \nYou must now lockpick the door ");
          System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -224,9 +224,9 @@ public class Main{
         System.out.println();
         Guess = scnr.next();
         //Level six riddles are needed to be correct 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("What is this a physics book, yeah you wont be needing that physics sucks");
@@ -242,7 +242,7 @@ public class Main{
         //laslty Level seven riddles 
         String Guess="";
         String riddleAnswer = "Wet";
-        Boolean correctAns = false;
+        Boolean AnwserIsCorrect = false;
         Item Phone = new Item("A Phone", "You got to the end now you get a phone, Oh wait it is dead LOL");
          System.out.println();
         System.out.println("Congrats you made it to the next level");
@@ -251,9 +251,9 @@ public class Main{
         System.out.println();
         Guess = scnr.next();
         //Level seven Riddles correct. 
-        while (!correctAns) {
+        while (AnwserIsCorrect==false) {
             if(Guess.equalsIgnoreCase(riddleAnswer)) {
-                correctAns = true;
+                AnwserIsCorrect = true;
                 System.out.println("woah you acutally got it correct");
                 System.out.println();
                 System.out.println("Idk Why you think a phone would help, its dead.");
@@ -277,7 +277,7 @@ public class Main{
         Boolean playerHasKeySeven = false;
         Boolean playerCanExit = false;
 
-        // making sure you have gotten every item you said you would need 
+        // making sure you have gotten every item you said you would need
         for(int i = 0; i < playerInventory.getSize(); i++) {
             if(playerInventory.getItem(i).getItemName().equalsIgnoreCase("A LockPick")){
                 playerHasKeyOne = true;
@@ -323,22 +323,20 @@ public class Main{
         Inventory playerInventory = new Inventory();
         HouseMap map= newHouse();
 
-        //Easiest way to set rooms up top compare 
+        //Rooms I can use to later Escape and get essitental items
         String[] rooms = new String[8];
         rooms[0] = "LevelOne";
-        rooms[1] = "LevelTwo";
-        rooms[2] = "LevelThree";
-        rooms[3] = "LevelFour";
-        rooms[4] = "LevelFive";
-        rooms[5] = "LevelSix";
         rooms[6] = "LevelSeven";
         rooms[7]="Exit";
         
         //Varibles for correct awnsers used 
-        Boolean Correct;
+        rooms[1] = "LevelTwo";
         String userInput = "LevelOne";
-        String userYesNo = "";
+        rooms[2] = "LevelThree";
+          rooms[3] = "LevelFour";
+         rooms[4] = "LevelFive";
         Room currentRoom;
+         rooms[5] = "LevelSix";
         String userName;
 
         // Starting the game out stroing 
@@ -382,6 +380,8 @@ public class Main{
 
         } while (!playerInventory.getEscape());
 
+        // This prints out to the file about how many steps a person has used I did this because I saw it on github from Kagan
+
         String fileName = String.format("%s's_Escape_Room_Result.txt", userName);
         FileOutputStream fileStream = null;
         try {
@@ -395,5 +395,3 @@ public class Main{
         outFS.close();
     }
 }
-    
-
